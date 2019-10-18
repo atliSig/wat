@@ -1,15 +1,17 @@
 import numpy as np
 from matplotlib import pyplot as plt
 
+import abc
 
-class Base:
+
+class Base(abc.ABC):
     def __init__(self, id=None, *args, **kwargs):
         self.sequence = np.array([])
         self.compute(*args, **kwargs)
         self.id = id
 
-    def __call__(self, *args, **kwargs):
-        self.plot()
+    def __call__(n, self, *args, **kwargs):
+        self.compute(n)
 
     def __str__(self):
         if self.id:
@@ -21,8 +23,9 @@ class Base:
     def __repr__(self):
         return self.sequence
 
-    def compute(self, *args, **kwargs):
-        raise NotImplementedError('foo')
+    @abc.abstractmethod
+    def compute(self, n, *args, **kwargs):
+        return self.sequence
 
     def plot(self, *args, **kwargs):
         plt.plot(self.sequence)
