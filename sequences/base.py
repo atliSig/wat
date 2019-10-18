@@ -14,12 +14,14 @@ class Base:
     def __str__(self):
         if self.id:
             return str(self.id)
-        else:
-            ret
-    def __repr__(self):
-        return self.sequence[]
+        elif self.sequence.shape[0] != 0:
+            stop = min(self.sequence.shape[0], 10)
+            return "Sequence for n < {} : {}".format(stop, self.sequence[:stop])
 
-    def compute(self, *args, **kwargs) -> np.array:
+    def __repr__(self):
+        return self.sequence
+
+    def compute(self, *args, **kwargs):
         raise NotImplementedError('foo')
 
     def plot(self, *args, **kwargs):

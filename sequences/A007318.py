@@ -1,12 +1,12 @@
 import numpy as np
-from sequences.base import Base
+from base import Base
 
 
 class A007318(Base):
     def __init__(self, *args, **kwargs):
         super(A007318, self).__init__(*args, **kwargs)
 
-    def compute(self, n=10, *args, **kwargs):
+    def compute(self, n=20, *args, **kwargs):
         seq = []
         print(args)
         for m in range(n):
@@ -14,7 +14,6 @@ class A007318(Base):
                 seq.append(binom(m, k))
 
         self.sequence = np.array(seq)
-
 
 facts = [1]
 
@@ -34,4 +33,6 @@ def fact(n):
     return x
 
 
-# %%
+a = A007318()
+a.compute()
+print(a)
