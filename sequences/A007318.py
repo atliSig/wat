@@ -35,5 +35,7 @@ def fact(n):
 
 a = A007318()
 a.compute()
+a.reverse()
 a.show(method='scatter')
 print(a)
+print(a.url)

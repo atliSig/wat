@@ -1,11 +1,10 @@
+import abc
+
 import numpy as np
 from matplotlib import pyplot as plt
 
-import abc
-
-
 class Base(abc.ABC):
-    def __init__(self, id=None, *args, **kwargs):
+    def __init__(self, id:str='', *args, **kwargs):
         self.sequence = np.array([])
         self.compute(*args, **kwargs)
         self.id = id
@@ -33,3 +32,10 @@ class Base(abc.ABC):
         '''
         getattr(plt,method)(range(len(self.sequence)), self.sequence, **kwargs)
         plt.show()
+
+    def reverse(self):
+        self.sequence = self.sequence[::-1]
+
+    @property
+    def url(self):
+        return "https://oeis.org/{}".format(self.id)
