@@ -35,4 +35,5 @@ def fact(n):
 
 a = A007318()
 a.compute()
+a.show(method='scatter')
 print(a)

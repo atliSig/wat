@@ -27,6 +27,9 @@ class Base(abc.ABC):
     def compute(self, n, *args, **kwargs):
         return self.sequence
 
-    def plot(self, *args, **kwargs):
-        plt.plot(self.sequence)
+    def show(self, *args, method='plot', **kwargs):
+        '''
+        Create a MatplotLib
+        '''
+        getattr(plt,method)(range(len(self.sequence)), self.sequence, **kwargs)
         plt.show()
