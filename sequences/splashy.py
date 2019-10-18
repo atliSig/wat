@@ -1,5 +1,11 @@
-#!/usr/local/bin/python3
+#!/ur/local/bin/python3
 #-*- coding: utf-8 -*-
+
+'''
+Inspired by
+http://www.leikjanet.is/?gluggi=leikir_spila&leikur=488
+'''
+
 
 FIELD_W = 6
 FIELD_H = 6
